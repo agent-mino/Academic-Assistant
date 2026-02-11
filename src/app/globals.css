@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;     /* almost black */
+    --foreground: 0 0% 98%;    /* near white */
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
+    --border: 0 0% 18%;
+    --input: 0 0% 12%;
+    --accent: 0 0% 90%;
+    --accent-hover: 0 0% 100%;
+    --glass: rgba(255, 255, 255, 0.06);
+    --glass-border: rgba(255, 255, 255, 0.12);
+  }
+
+  body {
+    @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))] antialiased;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    background: var(--glass);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  }
+
+  .glow-on-hover {
+    transition: all 0.25s ease;
+  }
+
+  .glow-on-hover:hover {
+    box-shadow: 0 0 24px rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+  }
+
+  .btn-primary {
+    @apply px-5 py-2.5 rounded-lg font-medium transition-all duration-200;
+    background: linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.06));
+    border: 1px solid var(--glass-border);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(145deg, rgba(255,255,255,0.18), rgba(255,255,255,0.10));
+    box-shadow: 0 0 20px rgba(255,255,255,0.15);
+  }
+
+  .btn-secondary {
+    @apply px-5 py-2.5 rounded-lg font-medium border border-[var(--glass-border)] text-[hsl(var(--foreground))] transition-all;
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255,255,255,0.08);
+  }
+}
