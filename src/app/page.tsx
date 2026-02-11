@@ -65,7 +65,7 @@ export default function Home() {
         {/* Header */}
         <div className="text-center space-y-2">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent">
-            Academic Assistant
+            Academai
           </h1>
           <p className="text-gray-400 text-lg">AI-powered • Summarize • Explain • Quiz</p>
         </div>
@@ -138,7 +138,7 @@ export default function Home() {
 
       {/* Subtle footer */}
       <footer className="mt-16 text-gray-600 text-sm">
-        Powered by Grok • {new Date().getFullYear()}
+        Made in Lagos • {new Date().getFullYear()}
       </footer>
     </div>
   );
